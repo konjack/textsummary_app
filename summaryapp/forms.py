@@ -7,7 +7,7 @@ class UserForm(forms.Form):
     select_delimiter = forms.ChoiceField(
                                         label = '区切り文字', 
                                         widget = forms.Select(attrs = {'class': 'form-control'}),
-                                        choices = [('。', '。'), ('、', '、')]
+                                        choices = [('。', '。')]
                                         )
     select_numberoflines = forms.ChoiceField(
                                             label = '要約行数', 
@@ -17,7 +17,7 @@ class UserForm(forms.Form):
     select_sample = forms.ChoiceField(
                                     label = 'サンプル文章', 
                                     widget = forms.Select(attrs = {'class': 'form-control'}), 
-                                    choices = [('選択しない', '選択しない'), ('一休さん', '一休さん'), ('不思議の国のアリス', '不思議の国のアリス'), ('猿蟹合戦', '猿蟹合戦')]
+                                    choices = [('選択しない', '選択しない'), ('一休さん', '一休さん'), ('不思議の国のアリス', '不思議の国のアリス')]
                                     )
     text = forms.CharField(
                         label='文章', 
