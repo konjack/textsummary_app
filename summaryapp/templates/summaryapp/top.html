@@ -1,0 +1,45 @@
+{% extends "summaryapp/base.html" %}
+{% load static %}
+{% block title %}要約アプリ{% endblock %}
+
+{% block content %}
+    <p class = "text-center ">要約したい文章を入力してください</p>
+
+    <ul class = "text-center list-unstyled">
+        <li>文章数は最大で10個までです</li>
+        <li>1文の長さは最大で200文字までです</li>
+    </ul>
+
+    <form method="POST" action = "{% url 'summaryresult' %}" class = "text-center">
+
+    {% csrf_token %}
+        <div class="selectoption_container">
+            {% for i in form.visible_fields|slice:":3"%}
+                <div class="select_option form-group" >
+                    {{ i.label_tag }}
+                    {{ i }}
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class = 'textarea_container form-group'>
+            <p class = "input_count"></p>
+            <p class = "input_count"></p>
+            <p class = "sentence_number"></p>
+                {% if form.errors %}
+                    {% for error in form.errors.values %}
+                        {{ error }}
+                    {% endfor %}
+                {% endif %}
+
+            {{form.text}}
+        </div>
+        <button id = "submit_button" type="submit" class = "text-center rounded-pill">実行</button>
+
+    </form>
+<script type="text/javascript"> 
+    let text_sample1 = "{{sample1}}";
+    let text_sample2 = "{{sample2}}";
+</script>
+<script type="text/javascript" src = "{% static 'summaryapp/summaryapp.js' %}"></script>
+{% endblock content%}

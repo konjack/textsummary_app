@@ -1,0 +1,33 @@
+{% extends "summaryapp/base.html" %}
+{% load static %}
+
+{% comment %} headerの内容 {% endcomment %}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'summaryapp/contact.css' %}"> 
+{% endblock %}
+{% block title %}お問い合わせ{% endblock %}
+{% comment %} headerの内容 {% endcomment %}
+
+
+{% comment %} main内の書き換え {% endcomment %}
+{% block content %}
+
+    <h2 class = "text-center ">お問い合わせ</h2>
+
+    <form method="POST" action = "{% url 'summarycontact' %}" >
+    {% csrf_token %}
+
+        {% for i in contact_form %}
+            <div class="contact_container form-group" >
+                {{ i.label_tag }}
+                {{ i }}
+            </div>
+        {% endfor %}
+
+        <div class = "button_wrapper">
+            <button type="submit" class = "text-center rounded-pill">送信</button>  
+        </div>
+    </form>
+
+{% endblock content%}
+{% comment %} main内の書き換え {% endcomment %}

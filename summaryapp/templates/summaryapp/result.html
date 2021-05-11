@@ -1,0 +1,36 @@
+{% extends "summaryapp/base.html" %}
+{% load static %}
+
+{% comment %} headerの内容 {% endcomment %}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'summaryapp/result.css' %}"> 
+{% endblock %}
+{% block title %}要約結果{% endblock %}
+{% comment %} headerの内容 {% endcomment %}
+
+
+{% comment %} main内の書き換え {% endcomment %}
+{% block content %}
+    <h2 class = "text-center ">要約結果</h2>
+
+    <div class = "result_content ">
+        <div class = "original">
+            <p class = "before_count">要約前の文字数(空白改行なし):{{ originaltext_count }}</p>
+            <p class = "before_count">要約前の文字数(空白改行あり):{{ originaltext_count_newline }}</p>
+            <p class = "form_content overflow-auto">{{ original_text | linebreaksbr }}</p>
+        </div>
+        <div class = "result">
+            <p class = "after_count">要約後の文字数(空白改行なし):{{ summarytext_count }}</p>
+            <p class = "after_count">要約後の文字数(空白改行あり):{{ summarytext_count_newline }}</p>
+            <p class = "form_content overflow-auto">{{ summary_text | linebreaksbr }}</p>
+        </div>
+    </div>
+
+    <div class = "button_wrapper">
+        <button type="submit" class = "text-center rounded-pill" onclick="location.href='{% url 'summarytop' %}'">戻る</button>  
+    </div>
+    
+{% endblock content%}
+{% comment %} main内の書き換え {% endcomment %}
+
+

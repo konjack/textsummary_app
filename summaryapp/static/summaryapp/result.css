@@ -1,0 +1,185 @@
+
+/* ここからbase.htmlと共通している中身 */
+body {
+    font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    }
+a {
+    text-decoration: none;
+    }
+header h1 a {
+    color:#000000;
+}
+header h1 a:hover {
+    color:#000000;
+}
+a:hover {
+    color: #FFFFFF;
+    }
+header {
+    display: flex;
+    }
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    margin: 10px auto;
+    font-size: 40px;
+    }
+header div {
+    background-color: #007AC4;
+    box-shadow: 0 0 3px gray;
+    position: absolute;
+    width: 250px;
+    margin-top: 10px;
+    right: 20px;
+    height: 50px;
+    }
+        
+header div a {
+    color: #FFFFFF;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+/* ここより上がbase.htmlと共通している中身 */
+
+
+/* ここから下が{% block content %}タグの中身 */
+main {
+    background-color: #F9F9F9;
+    box-shadow: 0 0 1px gray;
+    margin: 70px 10px 10px;
+    padding: 10px;
+    }
+.result_content {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.result {
+    width: 48%;
+}
+.original {
+    width: 48%;
+}
+.after_count {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.before_count {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.form_content {
+    border: solid 1px black;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 2px gray;
+    padding: 10px;
+    height: 400px;
+    font-size: 14px;
+    line-height: 24px;
+}
+button {
+    border: none;
+    box-shadow: 0 0 3px gray;
+    background-color: #007AC4;
+    color: #FFFFFF;
+    width: 30%;
+    font-size: 20px;
+    padding: 10px;
+    }
+.button_wrapper {
+    text-align:center;
+    margin-bottom: 10px;
+}
+/* ここより上が{% block content %}タグの中身 */
+
+
+@media screen and (max-width: 800px) {
+    /*　画面サイズが800pxまではここを読み込む　*/
+    body {
+        font-size: 15px;
+    }
+    /* header内の見出し */
+    header {
+        flex-flow: column;
+    }
+    header h1 {
+        position: static; 
+        transform: translateX(0);
+        width: 50%;
+        margin: 20px auto 10px;
+        }
+    header h1 a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        line-height: 35px;
+        font-size: 35px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    /* header内の見出し */
+
+    /* お問い合わせ遷移のdiv */
+    header div {
+        position: static;
+        background-color: #007AC4;
+        box-shadow: 0 0 3px gray;
+        margin: 0 auto 10px;
+        width: 60%;
+        height: 40px;
+        }
+            
+    header div a {
+        color: #FFFFFF;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        line-height: 40px;
+        font-size: 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    /* お問い合わせ遷移のdiv */
+
+    /* main内のcss */
+    main {
+        background-color: #F9F9F9;
+        box-shadow: 0 0 1px gray;
+        margin: 0 10px 5px;
+        padding: 10px;
+        }
+    .result_content {
+        display: flex;
+        flex-flow: column;
+    }
+    .original {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .result {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .form_content {
+        height: 300px;
+    }
+    button {
+    width: 50%;
+    font-size: 15px;
+    padding: 10px;
+    }
+     /* main内のcss */
+}

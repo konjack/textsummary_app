@@ -1,0 +1,200 @@
+/* header内のタグのcss */
+body {
+    font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    font-size: 20px;
+    }
+a {
+    text-decoration: none;
+    }
+header {
+    display: flex;
+    }
+
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    margin: 10px auto;
+    font-size: 40px;
+    }
+
+header h1 a , header h1 a:hover {
+    color:#000000;
+    }
+
+header div {
+    background-color: #007AC4;
+    box-shadow: 0 0 3px gray;
+    position: absolute;
+    right: 20px;
+    height: 50px;
+    width: 250px;
+    margin-top: 10px;
+    }
+        
+header div a , header div a:hover {
+    color: #FFFFFF;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+/* header内のタグのcss */
+
+/* mainタグ内のcss */
+main {
+    background-color: #F9F9F9;
+    box-shadow: 0 0 1px gray;
+    margin: 70px 10px;
+    padding: 10px;
+    }
+p {
+    margin-bottom: 0;
+    }
+ul {
+    margin-bottom: 10px;
+    list-style: none;
+    padding-left: 0;
+    }
+label {
+    display: block;
+    }
+.errorlist {
+    color: #ff0000;
+    font-size: 20px;
+}
+.selectoption_container {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    margin: 0 auto 7px;
+}
+.textarea_container {
+    margin: 0 auto;
+    width: 75%;
+}
+textarea {
+    box-shadow: 0 0 1px gray;
+    resize: none;
+    height: 300px;
+    margin-bottom: 10px;
+    }
+button {
+    border: none;
+    box-shadow: 0 0 3px gray;
+    background-color: #007AC4;
+    color: #FFFFFF;
+    width: 30%;
+    font-size: 20px;
+    padding: 10px;
+    }
+/* mainタグ内のcss */
+
+@media screen and (max-width: 800px) {
+    /*　画面サイズが800pxまではここを読み込む　*/
+    body {
+        font-size: 13px;
+    }
+    /* header内の見出し */
+    header {
+        flex-flow: column;
+    }
+    header h1 {
+        position: static; 
+        transform: translateX(0);
+        width: 60%;
+        margin: 20px auto 10px;
+        }
+    header h1 a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        font-size: 33px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    /* header内の見出し */
+
+    /* お問い合わせ遷移のdiv */
+    header div {
+        position: static;
+        background-color: #007AC4;
+        box-shadow: 0 0 3px gray;
+        margin: 0 auto 10px;
+        width: 60%;
+        height: 40px;
+        }
+            
+    header div a {
+        color: #FFFFFF;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        line-height: 40px;
+        font-size: 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    /* お問い合わせ遷移のdiv */
+
+    /* main内のcss */
+    main {
+        background-color: #F9F9F9;
+        box-shadow: 0 0 1px gray;
+        margin: 0 10px 5px;
+        padding: 10px;
+        }
+    ul {
+        margin-bottom: 5px;
+    }
+
+     /* セレクタ―のcss */
+    label {
+        font-size: 14px;
+    }
+    select {
+        height: 35px;
+    }
+    .selectoption_container {
+        flex-flow: column;
+    }
+    .select_option {
+        margin-bottom: 5px;
+    }
+    .form-control {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+     /* セレクタ―のcss */
+
+    .errorlist {
+        font-size: 15px;
+    }
+    .textarea_container {
+        margin: 0 auto;
+        width: 100%;
+    }
+    textarea {
+        box-shadow: 0 0 1px gray;
+        resize: none;
+        height: 320px;
+        margin-bottom: 10px;
+        }
+    button {
+    width: 50%;
+    font-size: 15px;
+    padding: 10px;
+    }
+     /* main内のcss */
+}
