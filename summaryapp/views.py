@@ -6,10 +6,14 @@ import requests
 import re
 # Create your views here.
 
+module_dir = os.path.dirname(__file__)  # get current directory
+samplefile1_path = os.path.join(module_dir, 'sample/sample1.txt')
+samplefile2_path = os.path.join(module_dir, 'sample/sample2.txt')
+
 #sampleテキストの取得
-with open('summaryapp\sample\sample1.txt', 'r', encoding='UTF-8') as f:
+with open(samplefile1_path , 'r', encoding='UTF-8') as f:
     text_data1 = f.read()
-with open('summaryapp\sample\sample2.txt', 'r', encoding='UTF-8') as f:
+with open(samplefile2_path, 'r', encoding='UTF-8') as f:
     text_data2 = f.read()
 
 #sampleテキスト内の改行コードをエスケープしないまま文字列として取得(pythonが理解できるコードに変換)
